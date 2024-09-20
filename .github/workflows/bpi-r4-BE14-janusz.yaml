@@ -67,6 +67,10 @@ jobs:
           curl -SL https://raw.githubusercontent.com/danpawlik/openwrt-builder/master/configs/common/lte-5g-modem >> .config
           curl -SL https://raw.githubusercontent.com/danpawlik/openwrt-builder/master/configs/common/community >> .config
 
+          echo "CONFIG_PACKAGE_nextdns=y" >> .config
+          echo "CONFIG_PACKAGE_pbr=y" >> .config
+          echo "CONFIG_PACKAGE_luci-app-pbr=y" >> .config
+
       - name: Run defconfig
         run: |
           make defconfig
