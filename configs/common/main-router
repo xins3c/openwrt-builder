@@ -21,17 +21,19 @@ CONFIG_PACKAGE_luci-theme-bootstrap=y
 CONFIG_PACKAGE_vim=y
 CONFIG_PACKAGE_bmon=y
 CONFIG_PACKAGE_htop=y
+# CONFIG_HTOP_LMSENSORS is not set
 CONFIG_PACKAGE_iperf3=y
 CONFIG_PACKAGE_curl=y
 CONFIG_PACKAGE_rsync=y
 CONFIG_PACKAGE_tcpdump=y
 CONFIG_PACKAGE_bind-dig=y
 CONFIG_PACKAGE_ethtool-full=y
-CONFIG_PACKAGE_pciutils=y
+# CONFIG_PACKAGE_pciutils=y
 # CONFIG_PACKAGE_irqbalance=y
 # CONFIG_PACKAGE_luci-app-irqbalance=y
 CONFIG_PACKAGE_tc-full=y
-CONFIG_PACKAGE_fping=y
+# CONFIG_PACKAGE_fping=y
+CONFIG_PACKAGE_coreutils=y
 
 # attendedsysupgrade / owut
 CONFIG_PACKAGE_owut=y
@@ -51,7 +53,9 @@ CONFIG_PACKAGE_qrencode=y
 # CONFIG_PACKAGE_libnghttp3 is not set
 # CONFIG_PACKAGE_libngtcp2 is not set
 
-CONFIG_PACKAGE_dnscrypt-proxy2=y
+# CONFIG_PACKAGE_dnscrypt-proxy2=y
+
+CONFIG_PACKAGE_stubby=y
 
 # CONFIG_PACKAGE_adguardhome=y
 
@@ -66,7 +70,6 @@ CONFIG_PACKAGE_collectd-mod-interface=y
 CONFIG_PACKAGE_collectd-mod-iwinfo=y
 CONFIG_PACKAGE_collectd-mod-load=y
 CONFIG_PACKAGE_collectd-mod-memory=y
-CONFIG_PACKAGE_collectd-mod-network=y
 CONFIG_PACKAGE_collectd-mod-rrdtool=y
 CONFIG_PACKAGE_collectd-mod-sensors=y
 CONFIG_PACKAGE_collectd-mod-wireless=y
@@ -79,13 +82,23 @@ CONFIG_PACKAGE_collectd-mod-dns=y
 # CONFIG_PACKAGE_luci-app-dawn=y
 
 ### usteer
-# CONFIG_PACKAGE_usteer=y
-# CONFIG_PACKAGE_luci-app-usteer=y
+CONFIG_PACKAGE_usteer=y
+CONFIG_PACKAGE_luci-app-usteer=y
 
-# sqm
-CONFIG_PACKAGE_luci-app-sqm=y
-CONFIG_PACKAGE_sqm-scripts=y
-CONFIG_PACKAGE_ip6tables-nft=y
+# SQM
+# CONFIG_PACKAGE_luci-app-sqm=y
+# CONFIG_PACKAGE_sqm-scripts=y
+# CONFIG_PACKAGE_ip6tables-nft=y
+
+CONFIG_PACKAGE_qosify=y
+CONFIG_PACKAGE_kmod-ifb=y
+CONFIG_PACKAGE_kmod-sched-bpf=y
+CONFIG_PACKAGE_kmod-sched-cake=y
+
+# just additional kmods for sqm-scripts - just in case
+CONFIG_PACKAGE_kmod-ipt-core=y
+CONFIG_PACKAGE_kmod-nft-compat=y
+CONFIG_PACKAGE_kmod-ipt-ipopt=y
 
 # ddns
 CONFIG_PACKAGE_luci-app-ddns=y
@@ -100,6 +113,9 @@ CONFIG_LUCI_LANG_pl=y
 CONFIG_PACKAGE_wpad-basic-mbedtls=m
 CONFIG_PACKAGE_wpad-mbedtls=y
 #######
+
+# Speedtest tools
+CONFIG_PACKAGE_librespeed-go=y
 
 CONFIG_ALL_KMODS=y
 CONFIG_ALL_NONSHARED=y
